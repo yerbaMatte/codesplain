@@ -12,11 +12,11 @@ function SearchBar() {
   };
 
   return (
-    <div className="search-bar">
+    <div className='search-bar'>
       <form onSubmit={handleSubmit}>
         <Input
-          type="text"
-          placeholder="Search repositories"
+          type='text'
+          placeholder='Search repositories'
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />

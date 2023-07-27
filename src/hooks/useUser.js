@@ -13,6 +13,6 @@ export default function useUser() {
   return {
     user: data?.user,
     isLoading,
-    error,
+    error
   };
 }

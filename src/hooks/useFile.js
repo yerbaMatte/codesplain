@@ -19,7 +19,7 @@ export default function useFile(owner, repoName, path) {
     if (data) {
       setLastFile({
         ...data,
-        content: atob(data.content),
+        content: atob(data.content)
       });
     }
   }, [data]);
@@ -27,6 +27,6 @@ export default function useFile(owner, repoName, path) {
   return {
     file: lastFile,
     isLoading,
-    error,
+    error
   };
 }

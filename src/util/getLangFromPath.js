@@ -7,7 +7,7 @@ const languages = {
   go: ['go'],
   rust: ['rs'],
   shell: ['sh'],
-  ruby: ['rb'],
+  ruby: ['rb']
 };
 
 export default function getLangFromFile(path) {

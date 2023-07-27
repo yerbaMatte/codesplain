@@ -15,7 +15,7 @@ function Folder({ repoName, owner, folder }) {
   const { entry, error } = useEntry({
     repoName,
     owner,
-    path: folder.path,
+    path: folder.path
   });
   if (error) {
     console.error(error);
@@ -25,7 +25,7 @@ function Folder({ repoName, owner, folder }) {
   if (folder.name) {
     name = (
       <div
-        className="select-none whitespace-nowrap"
+        className='select-none whitespace-nowrap'
         onClick={(e) => {
           e.stopPropagation();
           setExpanded(!expanded);
@@ -41,24 +41,14 @@ function Folder({ repoName, owner, folder }) {
   const children =
     expanded &&
     childEntries.map((entry) => (
-      <TreeEntry
-        key={entry.name}
-        owner={owner}
-        repoName={repoName}
-        entry={entry}
-      />
+      <TreeEntry key={entry.name} owner={owner} repoName={repoName} entry={entry} />
     ));
 
   return (
     <div>
-      <div className="hover:font-bold">{name}</div>
+      <div className='hover:font-bold'>{name}</div>
       {expanded && (
-        <div
-          className={classNames(
-            { 'border-l': expanded },
-            'ml-1.5 border-gray-400'
-          )}
-        >
+        <div className={classNames({ 'border-l': expanded }, 'ml-1.5 border-gray-400')}>
           {children}
         </div>
       )}
@@ -71,8 +61,8 @@ Folder.propTypes = {
   owner: PropTypes.string.isRequired,
   folder: PropTypes.shape({
     path: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  }).isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default Folder;

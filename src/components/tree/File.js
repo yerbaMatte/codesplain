@@ -6,7 +6,7 @@ function File({ file, repoName, owner }) {
   return (
     <Link
       to={`/repositories/${owner}/${repoName}/${file.path}`}
-      className="cursor-default whitespace-nowrap hover:font-bold"
+      className='cursor-default whitespace-nowrap hover:font-bold'
     >
       <FileIcon name={file.name} />
       {file.name}
@@ -17,10 +17,10 @@ function File({ file, repoName, owner }) {
 File.propTypes = {
   file: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired
   }).isRequired,
   repoName: PropTypes.string.isRequired,
-  owner: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired
 };
 
 export default File;

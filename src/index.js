@@ -8,7 +8,7 @@ const config = {
   revalidateIfStale: false,
   revalidateOnFocus: false,
   revalidateOnReconnect: false,
-  throwOnError: false,
+  throwOnError: false
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

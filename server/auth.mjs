@@ -13,9 +13,7 @@ export const hashPassword = async (password) => {
 
 export const verifyPassword = async (user, suppliedPassword) => {
   const [salt, hash] = user.password.split('.');
-  const suppliedHash = (
-    await scrypt(suppliedPassword, salt, 1000, 64)
-  ).toString('hex');
+  const suppliedHash = (await scrypt(suppliedPassword, salt, 1000, 64)).toString('hex');
 
   return suppliedHash === hash;
 };
@@ -25,8 +23,8 @@ export const createUser = async (email, password) => {
   const user = await client.user.create({
     data: {
       email,
-      password: hashedPassword,
-    },
+      password: hashedPassword
+    }
   });
 
   return user;
@@ -34,7 +32,7 @@ export const createUser = async (email, password) => {
 
 export const getUserByEmail = async (email) => {
   const user = await client.user.findUnique({
-    where: { email },
+    where: { email }
   });
 
   return user;

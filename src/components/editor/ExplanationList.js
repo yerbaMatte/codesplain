@@ -23,9 +23,7 @@ function ExplanationList({ editorRef, selections, onExplanationClose }) {
         return widget;
       });
 
-      return updatedWidgets.filter((w) =>
-        selections.find((s) => s.line === w.line)
-      );
+      return updatedWidgets.filter((w) => selections.find((s) => s.line === w.line));
     };
     setWidgets(updateWidgets);
   }, [selections, editorRef]);
@@ -61,11 +59,11 @@ function buildWidget(selection) {
       return {
         position: {
           lineNumber: selection.line,
-          column: 0,
+          column: 0
         },
-        preference: [2],
+        preference: [2]
       };
-    },
+    }
   };
 }
 

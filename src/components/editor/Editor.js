@@ -4,17 +4,17 @@ import getLangFromPath from '../../util/getLangFromPath';
 
 function Editor({ file, onExplainRequest }) {
   return (
-    <div className="relative pt-1" style={{ backgroundColor: '#1e1e1e' }}>
+    <div className='relative pt-1' style={{ backgroundColor: '#1e1e1e' }}>
       <MonacoEditor
-        height="calc(100vh - 88px)"
-        theme="vs-dark"
+        height='calc(100vh - 88px)'
+        theme='vs-dark'
         path={file.path}
         defaultValue={file.content}
         defaultLanguage={getLangFromPath(file.path)}
         options={{
           minimap: { enabled: false },
           glyphMargin: true,
-          lineNumbersMinChars: 1,
+          lineNumbersMinChars: 1
         }}
         onValidate={() => {}}
         onMount={(editor) => {
@@ -29,7 +29,7 @@ function Editor({ file, onExplainRequest }) {
               path: editor.getModel().uri.path,
               text,
               editor,
-              line: selectedRange.endLineNumber,
+              line: selectedRange.endLineNumber
             });
           };
 
@@ -37,9 +37,7 @@ function Editor({ file, onExplainRequest }) {
             domNode: null,
             getId: () => 'explain-code-widget',
             getDomNode: () => {
-              const { height } = editor
-                .getContainerDomNode()
-                .getBoundingClientRect();
+              const { height } = editor.getContainerDomNode().getBoundingClientRect();
               const domNode = document.createElement('div');
               domNode.style.position = 'absolute';
               domNode.style.top = `${height - 95}px`;
@@ -59,7 +57,7 @@ function Editor({ file, onExplainRequest }) {
               domNode.appendChild(button);
               return domNode;
             },
-            getPosition: () => null,
+            getPosition: () => null
           });
 
           editor.addAction({
@@ -70,7 +68,7 @@ function Editor({ file, onExplainRequest }) {
             keybindingContext: null,
             contextMenuGroupId: 'modification',
             contextMenuOrder: 1,
-            run: explainCode,
+            run: explainCode
           });
         }}
       />

@@ -5,8 +5,8 @@ async function repositoriesFetcher([url, searchQuery]) {
   const res = await axios.get(url, {
     params: {
       q: searchQuery || '',
-      per_page: 10,
-    },
+      per_page: 10
+    }
   });
 
   return res.data.items;
@@ -21,6 +21,6 @@ export default function useRepositories(searchQuery) {
   return {
     data,
     isLoading,
-    error,
+    error
   };
 }

@@ -4,11 +4,7 @@ import RepositoriesListItem from '../components/repositories/RepositoriesListIte
 
 function RepositoriesSearchRoute() {
   const [params] = useSearchParams();
-  const {
-    data: repositories,
-    isLoading,
-    error,
-  } = useRepositories(params.get('q'));
+  const { data: repositories, isLoading, error } = useRepositories(params.get('q'));
 
   if (isLoading) {
     return 'Loading...';
@@ -20,7 +16,7 @@ function RepositoriesSearchRoute() {
     return <RepositoriesListItem key={r.id} repository={r} />;
   });
 
-  return <div className="container mx-auto">{renderedRepositories}</div>;
+  return <div className='container mx-auto'>{renderedRepositories}</div>;
 }
 
 export default RepositoriesSearchRoute;

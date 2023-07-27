@@ -8,9 +8,9 @@ function EditorRoute() {
       <Split
         sizes={[15, 85]}
         gutterSize={6}
-        direction="horizontal"
-        cursor="col-resize"
-        className="flex flex-row"
+        direction='horizontal'
+        cursor='col-resize'
+        className='flex flex-row'
       >
         <div>
           <TreePanel />

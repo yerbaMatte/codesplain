@@ -16,11 +16,7 @@ function Input({ className, label, error, onChange, ...rest }) {
 
   let errorMessage = null;
   if (showError && error && error[rest.name]) {
-    errorMessage = (
-      <div className="mt-0.5 text-red-500 text-sm">
-        {error[rest.name].join(', ')}
-      </div>
-    );
+    errorMessage = <div className='mt-0.5 text-red-500 text-sm'>{error[rest.name].join(', ')}</div>;
   }
 
   const classes = classNames(
@@ -32,12 +28,7 @@ function Input({ className, label, error, onChange, ...rest }) {
   return (
     <div>
       <Label htmlFor={rest.name}>{label}</Label>
-      <input
-        {...rest}
-        id={rest.name}
-        className={classes}
-        onChange={handleChange}
-      />
+      <input {...rest} id={rest.name} className={classes} onChange={handleChange} />
       {errorMessage}
     </div>
   );

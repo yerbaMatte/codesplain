@@ -16,38 +16,38 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'test',
-        element: <TestRoute />,
+        element: <TestRoute />
       },
       {
         path: 'signout',
-        element: <SignOutRoute />,
+        element: <SignOutRoute />
       },
       {
         path: 'signup',
-        element: <SignUpRoute />,
+        element: <SignUpRoute />
       },
       {
         path: 'signin',
-        element: <SignInRoute />,
+        element: <SignInRoute />
       },
       {
         path: '',
-        element: <HomeRoute />,
+        element: <HomeRoute />
       },
       {
         path: 'repositories/:owner/:repoName/*',
-        element: <EditorRoute />,
+        element: <EditorRoute />
       },
       {
         path: 'repositories',
-        element: <RepositoriesSearchRoute />,
+        element: <RepositoriesSearchRoute />
       },
       {
         path: '*',
-        element: <NotFoundRoute />,
-      },
-    ],
-  },
+        element: <NotFoundRoute />
+      }
+    ]
+  }
 ]);
 
 function App() {

@@ -20,70 +20,70 @@ function SignUpForm() {
     signUp({
       email,
       password,
-      passwordConfirmation,
+      passwordConfirmation
     });
   };
 
   if (isSignedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to='/' />;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-6">
-      <div className="col-span-6">
+    <form onSubmit={handleSubmit} className='grid grid-cols-6 gap-6'>
+      <div className='col-span-6'>
         <Input
-          label="Email"
+          label='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          name="email"
+          type='email'
+          name='email'
           error={error}
         />
       </div>
 
-      <div className="col-span-6 sm:col-span-3">
+      <div className='col-span-6 sm:col-span-3'>
         <Input
-          label="Password"
+          label='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          name="password"
+          type='password'
+          name='password'
           error={error}
         />
       </div>
 
-      <div className="col-span-6 sm:col-span-3">
+      <div className='col-span-6 sm:col-span-3'>
         <Input
-          label="Password Confirmation"
+          label='Password Confirmation'
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
-          type="password"
-          name="passwordConfirmation"
+          type='password'
+          name='passwordConfirmation'
           error={error}
         />
       </div>
 
-      <div className="col-span-6">
+      <div className='col-span-6'>
         <Checkbox
-          label="Receive marketing emails"
+          label='Receive marketing emails'
           checked={marketingAccept}
           onChange={(e) => setMarketingAccept(e.target.checked)}
-          name="marketingAccept"
+          name='marketingAccept'
         />
       </div>
 
-      <FormError error={error} className="col-span-6" />
+      <FormError error={error} className='col-span-6' />
 
-      <div className="col-span-6 flex items-center">
-        <Button wide loading={isLoading} type="submit">
+      <div className='col-span-6 flex items-center'>
+        <Button wide loading={isLoading} type='submit'>
           Sign Up
         </Button>
       </div>
 
-      <div className="col-span-6 flex items-center">
-        <p className="text-sm text-gray-500">
+      <div className='col-span-6 flex items-center'>
+        <p className='text-sm text-gray-500'>
           Already have an account?{' '}
-          <Link to="/signin" className="text-gray-700 underline">
+          <Link to='/signin' className='text-gray-700 underline'>
             Sign in
           </Link>
           .

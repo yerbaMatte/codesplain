@@ -31,6 +31,6 @@ export default function useEntry({ repoName, owner, path, shouldFetch }) {
   return {
     isLoading,
     error,
-    entry: data,
+    entry: data
   };
 }

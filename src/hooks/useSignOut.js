@@ -21,7 +21,7 @@ function useSignOut() {
   return {
     isSignedOut: data,
     error,
-    isLoading,
+    isLoading
   };
 }
 

@@ -5,7 +5,7 @@ import getLangFromPath from '../util/getLangFromPath';
 async function explanationFetcher([url, { text, path }]) {
   const { data } = await axios.post(url, {
     text,
-    language: getLangFromPath(path),
+    language: getLangFromPath(path)
   });
   const choice = data && data.choices && data.choices[0] && data.choices[0];
 
@@ -13,14 +13,11 @@ async function explanationFetcher([url, { text, path }]) {
 }
 
 export default function useExplanation({ text, path }) {
-  const { data, error, isLoading } = useSWR(
-    [`/api/explain`, { text, path }],
-    explanationFetcher
-  );
+  const { data, error, isLoading } = useSWR([`/api/explain`, { text, path }], explanationFetcher);
 
   return {
     isLoading,
     error,
-    explanation: data,
+    explanation: data
   };
 }

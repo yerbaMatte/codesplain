@@ -12,7 +12,7 @@ const initServer = async () => {
       name: 'session',
       keys: [process.env.COOKIE_SECRET],
       httpOnly: true,
-      sameSite: 'strict',
+      sameSite: 'strict'
     })
   );
   app.use((req, res, next) => {

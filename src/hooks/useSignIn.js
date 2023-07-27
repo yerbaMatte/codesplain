@@ -15,16 +15,13 @@ async function signIn(_, { arg }) {
 }
 
 function useSignIn() {
-  const { trigger, data, error, isMutating } = useSWRMutation(
-    '/api/user',
-    signIn
-  );
+  const { trigger, data, error, isMutating } = useSWRMutation('/api/user', signIn);
 
   return {
     isSignedIn: data,
     error,
     signIn: trigger,
-    isLoading: isMutating,
+    isLoading: isMutating
   };
 }
 
