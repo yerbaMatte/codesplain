@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import RepositoriesListItem from './RepositoriesListItem';
 
 // during test, do not import a real FileIcon Component inside RepositoriesListItem
-jest.mock('../tree/FileIcon', () => {
-  return () => {
-    // instead of a real component, replace it with the return value below
-    return 'File Icon Component';
-  };
-});
+// jest.mock('../tree/FileIcon', () => {
+//   return () => {
+//     // instead of a real component, replace it with the return value below
+//     return 'File Icon Component';
+//   };
+// });
 
 function renderComponent() {
   const repository = {
@@ -29,5 +29,6 @@ function renderComponent() {
 
 test('shows a link to a github homepage for this repository', async () => {
   renderComponent();
-  // await screen.findByRole('img', { name: 'Python' });
+
+  await screen.findByRole('img', { name: 'Python' });
 });
